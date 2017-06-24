@@ -1,0 +1,27 @@
+{
+  "name": "dice-jobs",
+  "version": "1.0.0",
+  "description": "scrape dice to see recent jobs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itolu94/Dice.git"
+  },
+  "author": "Tolu Idowu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itolu94/Dice/issues"
+  },
+  "homepage": "https://github.com/itolu94/Dice#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.10.8",
+    "request": "^2.81.0"
+  }
+}
