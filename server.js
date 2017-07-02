@@ -8,6 +8,7 @@ var express = require('express'),
     Jobs = require('./models/jobs.js'),
     bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
+    PORT = process.env.PORT || 3012;
     app = express();
 
 
@@ -150,6 +151,6 @@ app.delete('/open-application/note', function(req, resp) {
 
 
 
-app.listen(3012, function() {
+app.listen(PORT, function() {
     console.log('Connected on PORT 3012');
 });
