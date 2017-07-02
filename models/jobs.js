@@ -8,14 +8,25 @@ var Schema = mongoose.Schema;
 var jobsSchema = new Schema ({
 	title: {
 		type: String,
-		trim: true
+		trim: true,
+		require: true
 	},
 	description:{
 		type: String,
-		trim: true
+		trim: true,
+		require: true
 	},
 	link: {
 		type: String,
+		require: true,
+		unique: true	
+	},
+	about: {
+		type: String,
+		require: true
+	},
+	notes: {
+		type: [String],
 	}
 })
 

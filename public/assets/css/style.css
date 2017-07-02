@@ -1,0 +1,22 @@
+body {
+	background-image: url('http://wallpapercave.com/wp/Je34b2j.jpg');
+    background-attachment: fixed;
+}
+
+.container{
+	width: 60%;
+	/*background: white;*/
+}
+
+.title {
+	background: grey; 
+}
+
+.listing{
+	margin-bottom: 20px;
+	background: white;
+}
+
+.header{
+	color: white;
+}

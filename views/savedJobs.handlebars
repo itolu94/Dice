@@ -1,0 +1,34 @@
+<div class="container">	
+	<div class="header center-align">
+		<h2>Saved Jobs</h2>
+	</div>
+	{{#each jobs}}
+		<div class="listing">
+			<div class="title">			
+				<p id="position{{this.id}}">{{this.position}}</p>
+			</div>
+			<p id="description{{this.id}}">{{this.description}}</p>
+			<p id="location{{this.id}}">{{this.about}}</p>
+			<a target='_blank' id="link{{this.id}}" href="{{this.link}}">See Page</a>
+			<br>
+      <button listing='{{this.id}}' class='addNote' ><a href="#modal1" />Add Note</a></button>
+			<button listing='{{this.id}}' class='delete' >Delete Job</button>
+		</div>
+	{{/each}}
+</div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Save Notes</h4>
+      <div id="notes">
+      	
+      </div>
+    </div>
+    <div class="modal-footer">
+    <form id='newNote'>
+      <textarea id='noteText' name="newNote" cols="30" rows="10"></textarea>
+      <input type="submit">
+      </form>
+    </div>
+  </div> 
