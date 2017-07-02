@@ -5,16 +5,32 @@ body {
 
 .container{
 	width: 60%;
-	/*background: white;*/
 }
 
 .title {
 	background: grey; 
+	font-size: 30px;
+	color: white;
 }
 
 .listing{
 	margin-bottom: 20px;
 	background: white;
+}
+
+.listing span {
+	font-weight: bold;
+	color: black;
+}
+
+.listing button {
+	display: block;
+}
+
+
+#notes {
+	height: 231px;
+	overflow: auto;
 }
 
 .header{

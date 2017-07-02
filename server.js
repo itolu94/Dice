@@ -31,8 +31,8 @@ app.engine('handlebars', ehs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // establish connection to mongoDB
-mongoose.connect('mongodb://heroku_1v9whhx8:ptddn4qvbucg4bbih374hq1qic@ds145312.mlab.com:45312/heroku_1v9whhx8');
-// mongoose.connect('mongodb://localhost/newjobsDB');
+mongoose.connect('mongodb://localhost/newjobsDB');
+
 var db = mongoose.connection;
 
 db.on('error', function(err) {
@@ -101,8 +101,7 @@ app.post('/jobs/save', function(req, resp){
       description: req.body.description,
       link: req.body.link, 
       about: req.body.location, 
-  });
-
+  });  
   saveJobs.save(function(err, doc){
     if (err) console.log(err);
   })
@@ -129,6 +128,7 @@ app.get('/jobs/save/notes', function(req, resp){
 // jobs that have been applied too
 app.get('/open-application', function(req, resp){
   Jobs.find({}, function(err, doc){
+    if(err) console.log(err);
     resp.render('savedJobs', {jobs: doc})
   });
 })

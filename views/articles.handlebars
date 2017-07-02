@@ -1,5 +1,5 @@
 <div class="container">	
-	<div class="header">
+	<div class="header center-align">
 		<h2>Job Posting</h2>
 		<button><a href="/open-application">Saved Jobs</a></button>
 	</div>	
@@ -8,9 +8,10 @@
 			<div class="title">			
 				<p id="position{{this.id}}">{{this.position}}</p>
 			</div>
-			<p id="description{{this.id}}">{{this.description}}</p>
-			<p id="location{{this.id}}">{{this.about}}</p>
-			<a target='_blank' id="link{{this.id}}" href="{{this.link}}">See Page</a>
+			<p id="description{{this.id}}"><span>Description:</span> {{this.description}}</p>
+			<p id="location{{this.id}}"><span>Company & Location:</span> {{this.about}}</p>
+			<a target='_blank' id="link{{this.id}}" href="{{this.link}}"><span>Link: </span>See Page</a>
+			<br>
 			<button listing='{{this.id}}' class='save'>Save Job</button>
 		</div>
 	{{/each}}

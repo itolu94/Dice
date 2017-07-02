@@ -12,14 +12,24 @@ $(document).ready(function() {
 
 
     // appends notes for jobs posting 
-    var findNotes = function(index) {
-        $('#notes').html('');
+    var findNotes = function(notes) {
         // add error handling for no notes
-        var jobNotes = noted[index].notes;
-        if (jobNotes.length === 0) {
-            console.log('No Notes Added')
+        if (notes.length === 0) {
+            console.log('No Notes Added');
+        } else if (typeof notes === 'string') {
+            var button = $('<button>')
+                .addClass('deleteNote')
+                .append('Delete Me');
+            var div = $('<div>')
+                .addClass('note');
+            var p = $('<p>')
+                .addClass('deleteNote noteText')
+                .append(notes);
+            div.append(p, button);
+            $('#notes').append(div);
         } else {
-            for (var i = 0; i < jobNotes.length; i++) {
+            console.log('im in here...')
+            for (var i = 0; i < notes.length; i++) {
                 var button = $('<button>')
                     .addClass('deleteNote')
                     .append('Delete Me');
@@ -27,12 +37,14 @@ $(document).ready(function() {
                     .addClass('note');
                 var p = $('<p>')
                     .addClass('deleteNote noteText')
-                    .append(jobNotes[i]);
+                    .append(notes[i]);
                 div.append(p, button);
                 $('#notes').append(div);
             }
+
         }
     }
+
 
 
     // saves job posting to mongodb
@@ -61,7 +73,6 @@ $(document).ready(function() {
             dataType: 'json',
             data: deletePost
         })
-
         $(this).closest('.listing').remove();
     })
 
@@ -71,8 +82,10 @@ $(document).ready(function() {
         listing = id
         for (var i = 0; i < noted.length; i++) {
             if (id === noted[i]._id) {
-                index = i;
-                findNotes(index);
+                var jobNotes = noted[i].notes;
+                console.log(jobNotes)
+                $('#notes').html('');
+                findNotes(jobNotes);
                 break;
             };
         };
@@ -81,11 +94,14 @@ $(document).ready(function() {
     // adds a new note to job posting
     $('#newNote').on('submit', function(e) {
         e.preventDefault();
+        var newNote = $('#noteText').val(),
+            saveNote = { id: listing, note: newNote }
         $.ajax({
             method: 'post',
             url: '/open-application/note',
-            data: { id: noted[index]._id, note: $('#noteText').val() }
+            data: saveNote
         })
+        findNotes(newNote);
     });
 
 
@@ -100,9 +116,11 @@ $(document).ready(function() {
             dataType: 'json',
             data: noteText
         })
+        $(this).closest('.note').remove();
+
     })
 
 
 
-    $('.modal').modal().css({ 'height': '40%' });
+    $('.modal').modal().css({ 'height': '500px' });
 });
