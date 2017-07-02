@@ -8,7 +8,7 @@ var express = require('express'),
     Jobs = require('./models/jobs.js'),
     bodyParser = require("body-parser"),
     methodOverride = require('method-override'),
-    PORT = process.env.PORT || 3012;
+    PORT = process.env.PORT || 3012,
     app = express();
 
 
