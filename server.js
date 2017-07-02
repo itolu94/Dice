@@ -31,7 +31,8 @@ app.engine('handlebars', ehs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // establish connection to mongoDB
-mongoose.connect('mongodb://localhost/newjobsDB');
+mongoose.connect('mongodb://heroku_1v9whhx8:ptddn4qvbucg4bbih374hq1qic@ds145312.mlab.com:45312/heroku_1v9whhx8');
+// mongoose.connect('mongodb://localhost/newjobsDB');
 
 var db = mongoose.connection;
 
