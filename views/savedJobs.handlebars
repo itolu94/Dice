@@ -1,8 +1,13 @@
+  <nav id="header">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Saved Jobs</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/get-stories">Job Posting</a></li>
+      </ul>
+    </div>
+  </nav>
+
 <div class="container">	
-	<div class="header center-align">
-		<h2>Saved Jobs</h2>
-    <button><a href="/get-stories">Job Posting</a></button>
-	</div>
 	{{#each jobs}}
 		<div class="listing">
 			<div class="title">			
@@ -11,7 +16,7 @@
 			<p id="description{{this.id}}"><span>Description:</span> {{this.description}}</p>
 			<p id="location{{this.id}}"><span>Company & Location:</span> {{this.about}}</p>
 			<a target='_blank' id="link{{this.id}}" href="{{this.link}}"><span>Link: </span>See Page</a>
-			<br>
+      <br>
       <button listing='{{this.id}}' class='addNote' ><a href="#modal1" />Add Note</a></button>
 			<button listing='{{this.id}}' class='delete' >Delete Job</button>
 		</div>

@@ -1,16 +1,31 @@
 body {
-	background-image: url('http://wallpapercave.com/wp/Je34b2j.jpg');
+	background-image: url('http://imgwallpaper.info/download/20150809/minimalism-men-computer-dogs-clock-guitar-1920x1080.jpg');
     background-attachment: fixed;
+    background-size: cover;
 }
 
-.container{
-	width: 60%;
+#header{
+	margin-bottom: 60px;
+	background-color: #c5cfad;
+	color: black;
+
+}
+
+nav .brand-logo {
+	color: black;
+	font-weight: bold;
+}
+
+nav ul a {
+	color: black;
+	font-weight: bold;
 }
 
 .title {
-	background: grey; 
-	font-size: 30px;
-	color: white;
+	background: #c5cfad; 
+	font-size: 20px;
+	color: black;
+	font-weight: bold;
 }
 
 .listing{
@@ -24,7 +39,12 @@ body {
 }
 
 .listing button {
-	display: block;
+	display: inline-block;
+	margin: 15px 0;
+}
+
+button a {
+	color: black;
 }
 
 
@@ -32,6 +52,7 @@ body {
 	height: 231px;
 	overflow: auto;
 }
+
 
 .header{
 	color: white;
