@@ -29,7 +29,6 @@ $(document).ready(function() {
                     .addClass('deleteNote noteText')
                     .append(jobNotes[i]);
                 div.append(p, button);
-                // var note = '<p>' + jobNotes[i] + '</p>';
                 $('#notes').append(div);
             }
         }
@@ -95,7 +94,6 @@ $(document).ready(function() {
             id: listing,
             note: $(this).siblings().text()
         };
-        console.log(noteText);
         $.ajax({
             method: 'delete',
             url: 'open-application/note',

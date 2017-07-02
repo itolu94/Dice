@@ -31,7 +31,7 @@ app.engine('handlebars', ehs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // establish connection to mongoDB
-mongoose.connect('pointy-63192');
+mongoose.connect(process.env. + 'pointy-63192');
 var db = mongoose.connection;
 
 db.on('error', function(err) {
