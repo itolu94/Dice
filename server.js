@@ -30,7 +30,7 @@ app.engine('handlebars', ehs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // establish connection to mongoDB
-mongoose.connect('mongodb://localhost/newjobsDB');
+mongoose.connect('pointy-63192');
 var db = mongoose.connection;
 
 db.on('error', function(err) {
@@ -143,7 +143,6 @@ app.post('/open-application/note', function(req, resp) {
 app.delete('/open-application/note', function(req, resp) {
   var id = req.body.id;
   var note = req.body.note;
-  console.log(req.body)
   Jobs.update({_id: id}, {$pull: {notes: note}}, function(err, doc){
     if (err) console.log(err);
   })  
