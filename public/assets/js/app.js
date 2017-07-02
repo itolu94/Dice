@@ -37,8 +37,8 @@ $(document).ready(function() {
 
     // saves job posting to mongodb
     $('.save').on('click', function() {
-        listing = $(this).attr('listing'),
-            job = {};
+        var job = {};
+        listing = $(this).attr('listing');
         job.position = $('#position' + listing).text(),
             job.description = $('#description' + listing).text(),
             job.location = $('#location' + listing).text(),
